@@ -19,9 +19,7 @@ Route::get('/', function () {
 
 Route::get('/passagem/dados', function () {
     return view('exemplos.passagem_dados', [
-        'nome' => 'Pedro',
-        'descricao' => 'Colaborador Construsite',
+        'nome' => 'Pedro';
+        'descicao' => 'Colaborador Construsite';
     ]);
 });
-
-

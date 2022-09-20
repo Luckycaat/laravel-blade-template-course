@@ -24,4 +24,6 @@ Route::get('/passagem/dados', function () {
     ]);
 });
 
-
+Route::get('/passagem/dados', function () {
+    return view('exemplos.passagem_dados')->with;
+});

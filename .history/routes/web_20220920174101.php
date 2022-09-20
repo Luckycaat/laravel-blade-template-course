@@ -23,5 +23,3 @@ Route::get('/passagem/dados', function () {
         'descricao' => 'Colaborador Construsite',
     ]);
 });
-
-

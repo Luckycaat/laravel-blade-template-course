@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index', [
+        'paginacao' => true,
         'projetos' => [
             [
                 'ativo' => true,

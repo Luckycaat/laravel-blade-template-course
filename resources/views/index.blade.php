@@ -23,7 +23,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Pedro Souza</a>
             <button
                 class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
                 type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -32,13 +32,24 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
+                @php
+                    $itensMenu = [
+                        [
+                            'descricao' => 'Portfolio',
+                            'link' => '#portfolio',
+                        ],
+                        [
+                            'descricao' => 'Sobre',
+                            'link' => '#about',
+                        ],
+                        [
+                            'descricao' => 'Contato',
+                            'link' => '#contact',
+                        ],
+                    ];
+                @endphp
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#about">About</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#contact">Contact</a></li>
+                    @each('parciais._itens_menu', $itensMenu, 'item')
                 </ul>
             </div>
         </div>
@@ -90,14 +101,8 @@
                 @empty
                     <h1>Nenhum projeto encontrado</h1>
                 @endforelse
-
-                <nav aria-label="Page navigation example" style="margin-top: 50px;">
-                    <ul class="pagination pagination-lg">
-                        @for ($i = 1; $i < 10; $i++)
-                            <li class="page-item"><a href="#" class="page-link">{{ $i }}</a></li>
-                        @endfor
-                    </ul>
-                </nav>
+                @include('site.parciais._paginacao', ['first' => 'Primero', 'last' => 'Último'])
+                {{-- @includeFirst(['site.parciais._paginacao', 'parciais._paginacao', 'main._paginacao']) --}}
             </div>
         </div>
     </section>

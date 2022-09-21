@@ -32,22 +32,6 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                @php
-                    $itensMenu = [
-                        [
-                            'descricao' => 'Portfolio',
-                            'link' => route('site.componente.portfolio'),
-                        ],
-                        [
-                            'descricao' => 'Sobre',
-                            'link' => route('site.componente.sobre'),
-                        ],
-                        [
-                            'descricao' => 'Contato',
-                            'link' => route('site.componente.contato'),
-                        ],
-                    ];
-                @endphp
                 <ul class="navbar-nav ml-auto">
                     @each('parciais._itens_menu', $itensMenu, 'item')
                 </ul>
@@ -128,8 +112,8 @@
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <!-- Contact form JS-->
-    <script src="assets/mail/jqBootstrapValidation.js"></script>
-    <script src="assets/mail/contact_me.js"></script>
+    <script src="/assets/mail/jqBootstrapValidation.js"></script>
+    <script src="/assets/mail/contact_me.js"></script>
     <!-- Core theme JS-->
     <script src="/js/scripts.js"></script>
 </body>

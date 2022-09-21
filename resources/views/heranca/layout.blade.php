@@ -32,22 +32,6 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                @php
-                    $itensMenu = [
-                        [
-                            'descricao' => 'Portfolio',
-                            'link' => route('site.heranca.portfolio'),
-                        ],
-                        [
-                            'descricao' => 'Sobre',
-                            'link' => route('site.heranca.sobre'),
-                        ],
-                        [
-                            'descricao' => 'Contato',
-                            'link' => route('site.heranca.contato'),
-                        ],
-                    ];
-                @endphp
                 <ul class="navbar-nav ml-auto">
                     @each('parciais._itens_menu', $itensMenu, 'item')
                 </ul>
@@ -120,9 +104,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <!-- Contact form JS-->
-    <script src="assets/mail/jqBootstrapValidation.js"></script>
-    <script src="assets/mail/contact_me.js"></script>
+
+    @stack('scripts_contato')
     <!-- Core theme JS-->
     <script src="/js/scripts.js"></script>
 </body>

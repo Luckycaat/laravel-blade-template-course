@@ -63,3 +63,12 @@
         </div>
     </section>
 @endsection
+
+@prepend('scripts_contato')
+    <script src="/assets/mail/jqBootstrapValidation.js"></script>
+@endprepend
+
+@push('scripts_contato')
+    <!-- Contact form JS-->
+    <script src="/assets/mail/contact_me.js"></script>
+@endpush

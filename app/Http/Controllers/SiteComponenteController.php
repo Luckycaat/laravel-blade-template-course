@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class SiteComponenteController extends Controller
 {
-    public function home()
+    public function home(string $idioma = 'pt-BR')
     {
+        App::setLocale($idioma);
         return view('componente.home');
     }
 
